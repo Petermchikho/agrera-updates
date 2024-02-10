@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agrera livesctock selection</title>
+    <link rel="shortcut icon" href="../../assets/img/logo/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="../../assets/img/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="../../assets/img/logo/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="../../assets/img/logo/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/img/logo/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/img/logo/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logo/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logo/favicon-16.png">
+    <link rel="apple-touch-icon" href="../../assets/img/logo/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/logo/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/logo/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/logo/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/logo/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/logo/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/logo/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/logo/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/logo/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../../assets/img/logo/favicon-144.png">
+    <meta name="msapplication-config" content="../../assets/img/logo/browserconfig.xml">
+  
+    <!-------------------Vendor CSS Files----------->
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/vendor/swiper/swiper-bundle.min.css">
+    <!------------------ Own style files------------>
+    <link rel="stylesheet" href="../../assets/css/blogsupdate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-------------header section--------------->
+  <header id="header" class="header-general">
+    <div class="logo">
+      <a href="{% url 'homepage' %}">
+       <!-- <img src="{% static "assets/img/logo/agrera1.png" %}" alt="">-->
+        <img src= "../../assets/img/agrera1.png" alt="">
+        <h4>agrera</h4>
+      </a>
+      
+    </div>
+    <div class="nav-container" id="nav-container">
+      
+      <nav class="navigation-general" id="navigation-general">
+        <ul>
+          <li class="main-link active">
+            <a href="{% url 'homepage' %}"   class="nav-link-main active">Home</a>
+          </li>
+          
+          <li class="main-link dropdown" id="dropdown"><a href="#" class="nav-link-main"><span>Feed formulation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul id="DropDown" class="dropDown-inner">
+              <li><a href="{% url 'feed_formulation' %}" class="nav-link-main">Pig Feed</a></li>
+              <li><a href="{% url 'feed_formulation' %}" class="nav-link-main">Chicken Feed</a></li>
+              
+            </ul>
+          </li>
+          <li class="main-link">
+            
+          </li>
+          <li class="main-link "><a href="{% url 'marketplace_page' %}" class="nav-link-main">Marketplace</a></li>
+          <li class="main-link "></li>
+          <li class="main-link dropdown" id="dropdown">
+            <a href="#" class="nav-link-main">
+              <span>Drop Down</span> 
+              <i class="bi bi-chevron-down">
+
+              </i>
+            </a>
+            <ul id="DropDown" class="dropDown-inner">
+              <li><a href="#" class="nav-link-main">Drop Down 1</a></li>
+              <li><a href="#" class="nav-link-main">Drop Down 2</a></li>
+              <li><a href="{% url 'weather_home' %}" class="nav-link-main">Weather forecast</a></li>
+              <li><a href="{% url 'vacancy_page' %}" class="nav-link-main">Vacancies</a></li>
+            </ul>
+          </li>
+          <li class="main-link"><a href="{% url 'blogs_page' %}" class="nav-link-main">Blogs</a></li>
+          <li class="main-link"><a href="{% url 'mbeya_fertilizer' %}" class="nav-link-main">Mbeya Fertilizer</a></li>
+          
+        </ul>
+        <!--{% if not user.is_authenticated %}-->
+        <a href="{% url 'login_page' %}" class="login-signup" ><button >Login/Signup</button></a>
+        <!--{% endif %}-->
+      </nav>
+      <div class="close-harmburger">
+        <i class="bi bi-x-circle" id="close-nav"></i>
+      </div>
+      
+    </div>
+    <div class="container-dummy">
+      <!--add an if statement here
+      <a href="{% url 'profile_page' %}" class="profile-after-login" id="profile-after-login" >
+        {% if user.is_authenticated %}
+    
+            {% if user.profile_picture %}
+                <img src="{{ user.profile_picture.url }}" alt="Profile Picture">
+                <span class="counter-show"></span>
+            {% else %}
+                <img src="{% static 'profile_pics/no_profile.jpg' %}" alt="Default Profile Picture">
+                <span class="counter-show"></span>
+            {% endif %}
+        {% endif %}
+          
+          
+      </a>
+      -->
+      <div class="harmburger">
+        <i class="bi bi-list" id="harmburger"></i>
+      </div>
+   </div>
+  </header>
+  <!-- header ends here-->
+  <main>
+
+    <section class="single-blog-container section-padding">
+        <div class="left">
+            <div class="minor">
+              <span><a href="">Home</a></span> 
+              <i class="bi bi-chevron-right"></i>
+              <span class="green">vegetables</span> 
+            </div>
+            <div class="heading">
+              <h5>Secret to tomato farming </h5>
+            </div>
+            <div class="date-published">
+              <span>Sep 5,2023</span>
+              <span> 09:10</span>
+            </div>
+            <div class="image-container">
+              <figure>
+                <img src="../../assets/img/blogs/Image-15.png" alt="">
+              </figure>
+            </div>
+            <div class="author" id="author-show">
+                <img src="../../assets/img/mom.jpg" alt="">
+                <div class="author-name">
+                  <p class="bold">Mrs Mchikho <i class="bi bi-patch-check-fill"></i></p>
+                  <p>Bio-medical engineer</p>
+                </div>
+                
+              </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur
+                     adipisicing elit. Dolor suscipit, sed autem sunt quae, sequi porro doloremque minus enim, corrupti ex. Modi provident,
+                     quia quidem cupiditate dolorum at aspernatur. 
+                     Quae deleniti fugiat dolorum necessitatibus excepturi dignissimos distinctio vel porro velit, voluptatibus impedit voluptas molestiae nihil cumque 
+                      pariatur harum consectetur.
+                </p>
+                <img src="../../assets/img/blogs/Image-15.png" alt="">
+              
+            </div>
+            
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur
+                     adipisicing elit. Dolor suscipit, sed autem sunt quae, sequi porro doloremque minus enim, corrupti ex. Modi provident,
+                     quia quidem cupiditate dolorum at aspernatur. 
+                     Quae deleniti fugiat dolorum necessitatibus excepturi dignissimos distinctio vel porro velit, voluptatibus impedit voluptas molestiae nihil cumque 
+                      pariatur harum consectetur.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus ipsam, quod repellat nostrum quibusdam blanditiis suscipit asperiores, officia iure eum magnam tenetur provident labore ut similique quas corrupti? Numquam illum veniam, quaerat natus corrupti dolore tempora assumenda eos iure accusantium, dolorum ipsa quas earum minima eligendi velit qui corporis! Blanditiis sequi obcaecati dignissimos sint cumque fugiat eum dolorem maiores voluptatum. Repudiandae, excepturi? Quas quam corrupti reprehenderit molestias architecto, necessitatibus est maxime exercitationem eum illum quia tempora aut quibusdam atque excepturi qui possimus ullam aspernatur quaerat ab cupiditate officia iste similique! Quae, dicta ut accusantium saepe quia aspernatur id error?
+
+                </p>
+                <h6>what is it really all about?</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum mollitia accusantium quo et nisi? Perspiciatis a, tempora modi at provident corporis nihil molestiae nulla exercitationem dicta cupiditate id eum repellat ut? Quasi asperiores corporis itaque beatae nostrum possimus aperiam. Numquam cupiditate fugit in repellat porro voluptates assumenda vitae eaque error deserunt adipisci, veniam ipsa dignissimos. Quod corporis, commodi harum laborum sequi voluptates rem consectetur libero saepe accusamus. Molestiae exercitationem libero voluptas et itaque qui in explicabo ratione maxime! Ut magnam, voluptatum laudantium placeat non possimus rem doloremque eos facilis ad officiis sint. Vero facere doloremque voluptatem et obcaecati ipsum quos dolores iusto perferendis quia fugiat blanditiis aliquid veritatis amet corporis quisquam sed reprehenderit, repellendus magnam repellat officia temporibus maxime quibusdam quaerat. Omnis dolores sapiente fugit quae recusandae, saepe odit expedita animi doloribus vitae veniam, porro laborum aliquid. Atque illo facilis ex voluptatem, sequi perspiciatis sunt nulla ipsum odit soluta nemo ullam sint ipsam accusamus, eum obcaecati mollitia consectetur maxime accusantium exercitationem recusandae, dolorem laborum harum. Adipisci ratione necessitatibus delectus saepe odio quia, quidem, quis hic enim corrupti voluptas fugiat, itaque velit sunt aut corporis vitae facilis? Labore pariatur quisquam ea alias, aliquam quis sequi aperiam repudiandae. Beatae necessitatibus mollitia voluptatem?
+
+                </p>
+                <h6>Benefits of using it</h6>
+                <ul>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                </ul>
+                <h6>Benefits of using it 2</h6>
+                <ol>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                  <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, natus?</li>
+                </ol>
+            </div>
+            <div class="quote">
+                <p class="quote">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat autem, expedita quam harum ex illo numquam consectetur! Recusandae, nesciunt.
+                </p>
+            </div>
+            <div class="share">
+              <div>
+                <h6 class="share-heading">
+                  <i class="bi bi-share-fill"></i>
+                  share this blog 
+                </h6>
+              </div>
+              <div class="share-links">
+                <a href="" target="_blank" class="facebook">
+                    <i class="bi bi-facebook"></i>
+                    
+                </a>
+                <a href="" target="_blank" class="whatsapp">
+                   <i class="bi bi-whatsapp"></i>
+                   
+                </a>
+                
+                <a href="" target="_blank" class="linkedin">
+                    <i class="bi bi-linkedin"></i>
+                    
+                </a>
+                <a href="" target="_blank" class="twitter">
+                    <i class="bi bi-twitter"></i>
+                  
+                </a>
+                
+                <a href="" target="_blank" class="telegram">
+                    <i class="bi bi-telegram"></i>
+                    
+                </a>
+                
+
+              </div>
+               
+
+            </div>
+            <div class="comments">
+                <h6>
+                  <i class="bi bi-chat green"></i>
+                  Comments on mbeya fertiliser
+                </h6>
+                <div class="comment">
+                    <div class="user-image-info">
+                        <img src="../../assets/img/blogs/blogSlide1.jpg" alt="">
+                        <div class="name-date">
+                            <p class="name">
+                                Peter Mchikho
+                            </p>
+                            <p class="date">
+                                27 january 2024,at 10:24 am
+                            </p>
+                        </div>
+                    </div>
+                    <div class="user-comment">
+                        <p>
+                            The blog is very lovely Lorem 
+                            ipsum dolor sit amet consectetur adipisicing elit. Itaque, ad.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="user-image-info">
+                        <img src="../../assets/img/blogs/blogSlide2.jpg" alt="">
+                        <div class="name-date">
+                            <p class="name">
+                                Hope Sain
+                            </p>
+                            <p class="date">
+                                27 january 2024,at 10:24 am
+                            </p>
+                        </div>
+                    </div>
+                    <div class="user-comment">
+                        <p>
+                            The blog is very lovely Lorem 
+                            ipsum dolor sit amet consectetur adipisicing elit. Itaque, ad.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi qui voluptatem earum animi 
+                            eligendi in eaque deleniti, recusandae ea tempore.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="add-comment">
+                    
+                    <form action="">
+                        <textarea 
+                        name="" 
+                        id="" 
+                        placeholder="Add your comment"
+                        >
+
+                        </textarea>
+                        <div class="button-center">
+                            <button type="submit">Add Comment</button>
+
+                        </div>
+                        
+                    </form>
+                    <p class="not-logged">You must be<span><a href=""> logged in</a></span> to post a comment</p>
+            
+                </div>
+            </div>
+            <div class="previous-next">
+                <a href="">
+                    <button>
+                      <span>Previous Blog</span> 
+                    </button>
+                </a>
+                <a href="">
+                    <button>
+                      <span>Next Blog</span>
+                    </button>
+                </a>
+            </div>
+            
+            
+        </div>
+        <div class="right">
+            <div class="recent-posts">
+                <p class="heading bold">Recent posts</p>
+                <ul>
+                    <li><a href="">health benefits of cucumbers</a></li>
+                    <li><a href="">preserving tomatos</a></li>
+                    <li><a href="">rice farming</a></li>
+                </ul>
+            </div>
+            <div class="categories-container">
+                <p class="heading bold">categories</p>
+                <a class="categories">
+                    <button id="search-open">
+                      <i class="bi bi-search">
+
+                      </i>
+                      Search for an article
+                   </button> 
+                </a>
+                <a href="blogs.html" class="categories"><button>recent</button> </a>
+                <a href="blogcategory.html" class="categories"><button>vegetables</button> </a>
+                <a href="blogcategory.html" class="categories"><button>livestock</button> </a>
+                <a href="blogcategory.html" class="categories"><button>technology</button> </a>
+                <a href="blogcategory.html" class="categories"><button>fisheries</button> </a>
+                <a href="blogcategory.html" class="categories"><button>general crops</button> </a>
+                
+            </div>
+
+
+        </div>
+    </section>
+    <section class="full-image">
+      <div class="eye-x" id="eye-x-id">
+        <i class="bi bi-eye-slash-fill"></i>
+      </div>
+      <div class="dummy-view"></div>
+      
+    </section>
+    <section class="full-image-author">
+      <div class="eye-x-author" id="eye-x-id">
+        <i class="bi bi-eye-slash-fill"></i>
+      </div>
+      <div class="dummy-view-author">
+        
+        <div class="team-container sub-info">
+          <div class="container-info">
+            <div class="image">
+              <img src="../../assets/img/blogs/blogSlide1.jpg" alt="">
+            </div>
+            <div class="about-member">
+              <div class="name">
+                <h5 >
+                  Peter Mchikho
+                </5>
+              </div>
+              <div class="position justify-center">
+                <p>frontend webdeveloper</p>
+              </div>
+              
+              <div class="socials">
+                <a href="{{ blog.author.facebook_url }}" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bi bi-facebook facebook"></i></a>
+                <a href="{{ blog.author.twitter_url }}" target="_blank" rel="noopener noreferrer" class="twitter"><i class="bi bi-twitter-x twitter"></i></a>
+                <a href="{{ blog.author.instagram_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram instagram"></i></a>
+                <a href="{{ blog.author.linkedin_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin linkedin"></i></a> 
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <section class="search">
+        <div class="search-form" id="search-form">
+            <div class="filter">
+                <div class="search-close">
+                    <button id="search-close">
+                        <span>close search &nbsp;</span><i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <form method="post" action="{% url 'search' %}" class="form" autocomplete="off">
+                    <div class="input-holder">
+                      
+                      <i class="bi bi-search"></i>
+                      <input type="search" name="area" maxlength="50" id="search-input" placeholder="search" required>
+                      <button type="submit">Search</button>
+                    </div>
+                    <div class="auto-suggestion" id="auto-suggestion">
+                        
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </div>
+        
+    </section>
+    <section class="scroll-bar">
+      <div class="progress-bar">
+
+      </div>
+    </section>
+
+  
+     
+  </main>
+  <footer class="section-padding padding-bottom">
+    <div class="top">
+      <div class="left-container">
+        <div class="footer-heading-location">
+          <div class="heading">
+            <p class="bold larger">Contact Us</p>
+          </div>
+          <div class="list-items">
+            <p class="not-link">Luanar Bunda campus</p>
+            <p class="not-link">Lilongwe</p>
+            <p class="not-link">Malawi</p>
+            <div class="contact-info">
+              <p class="not-link"><i class="bi bi-telephone  white"></i>&nbsp;<span class="white">Phone : </span>+265998671706</p>
+              <p class="not-link"><i class="bi bi-envelope  white"></i>&nbsp;<span class="white">Email : </span>+265998671706</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-heading">
+          <div class="heading">
+            <p class="bold larger">Useful Links</p>
+          </div>
+          <div class="list-items">
+            <ul class="gray">
+              <li><a href="">Home</a></li>
+              <li><a href="">Blogs</a></li>
+              <li><a href="">Agrera</a></li>
+              <li><a href="">Service</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-heading">
+          <div class="heading">
+            <p class="bold larger">Our Services</p>
+          </div>
+          <div class="list-items">
+            <ul class="gray">
+              <li><a href="">Website development</a></li>
+              <li><a href="">Data Analysis</a></li>
+              <li><a href="">Artificial intelligence</a></li>
+              <li><a href="">Robotics</a></li>
+              <li><a href="">App Development</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-heading last">
+        <div class="logo">
+          <a href="">
+            <img src="assets/img/logo/agrera2.png" alt="">
+            <h5 class="bold ">
+              NativeBack
+            </h5>
+          </a>
+          
+        </div>
+        <div class="social-links">
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+  <a href="#" class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
+
+<!------------------------OWN JS --------------->
+<script>
+    /**encodeURI(document.location.href); */
+    const link=encodeURI(document.location.href);
+    const text=encodeURIComponent('hey,i found this interesting article');
+    const fb=document.querySelector('.facebook');
+    const twitter=document.querySelector('.twitter');
+    const linkedin=document.querySelector('.linkedin');
+    const whatsapp=document.querySelector('.whatsapp');
+    const telegram=document.querySelector('.telegram');
+    fb.href=`https://www.facebook.com/share.php?u=${link}`;
+    twitter.href=`https://www.twitter.com/share?&url=${link}&text=${text}&hashtags=agrera,agriculture,tech`;
+    linkedin.href=`https://www.linkedin.com/sharing/share-offsite/?url=${link}`;
+    whatsapp.href=`https://api.whatsapp.com/send?text=${text}+${link}`;
+    telegram.href=`https://telegram.me/share/url?url=${link}&text=${text}`;
+
+</script>
+
+<script src="../../assets/js/blogsUpdate.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="../../assets/css/weather.css">
+    <link rel="stylesheet" href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/vendor/swiper/swiper-bundle.min.css">
+</head>
+<body>
+<!-------------header section--------------->
+    <header id="header" class="header-general">
+        <div class="logo">
+            <a href="{% url 'homepage' %}">
+            <img src="../../assets/img/agrera1.png" alt="Agrera Logo">
+            <h4>agrera</h4>
+            </a> 
+        </div>
+        <div class="nav-container" id="nav-container">
+        
+        <nav class="navigation-general" id="navigation-general">
+            <ul>
+            <li class="main-link ">
+                <a href="{% url 'homepage' %}"   class="nav-link-main ">Home</a>
+            </li>
+            
+            <li class="main-link active dropdown" id="dropdown"
+            ><a href="#" class="nav-link-main active"><span>Advanced Tools</span> <i class="bi bi-chevron-down"></i></a>
+                <ul id="DropDown" class="dropDown-inner">
+                <li>
+                <a href="{% url 'recordbooks' %}" class="nav-link-main">
+                    Business Records
+                </a>
+                </li>
+                <li>
+                    <a href="{% url 'feed_formulation' %}" class="nav-link-main">
+                    Feed Formulation
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'mbeya_fertilizer' %}" class="nav-link-main">
+                    Mbeya Fertilizer
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'pedal' %}" class="nav-link-main inactive">
+                    Pest and Disease <span>&nbsp Analysis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'weather_home' %}" class="nav-link-main inactive">
+                    Weather 
+                    </a>
+                </li>
+                
+                </ul>
+            </li>
+            <li class="main-link "><a href="{% url 'marketplace_page' %}" class="nav-link-main">Marketplace</a></li>
+            
+            <li class="main-link"><a href="{% url 'blogs_page' %}" class="nav-link-main">Articles</a></li>
+            <li class="main-link "><a href="{% url 'vacancy_page' %}" class="nav-link-main">Vacancies</a></li>
+            <li class="main-link"><a href="{% url 'faqs' %}" class="nav-link-main">FAQ's</a></li>
+            <li class="main-link"><a href="{% url 'help' %}" class="nav-link-main">Contact Us</a></li>
+            </ul>
+            </ul>
+           <!-- {% if not user.is_authenticated %}-->
+            <a href="{% url 'login_page' %}" class="login-signup" ><button >Login/Signup</button></a>
+            <!-- {% endif %}-->
+            </nav>
+            <div class="close-harmburger">
+            <i class="bi bi-x-circle" id="close-nav"></i>
+            </div>
+            
+        </div>
+        <div class="container-dummy">
+            <!--add an if statement here-->
+            <div class="search search-open" id="search-open">
+                <i class="bi bi-search"></i>
+            </div>
+            
+            <!-- {% if user.is_authenticated %} -->
+            <a href="{% url 'profile_page' %}" class="profile-after-login" id="profile-after-login" >
+                <!-- {% if user.profile_picture %}-->
+                    <img src="{{ user.profile_picture.url }}" alt="Profile Picture">
+                    <span class="counter-show"></span>
+                <!-- {% else %}-->
+                    <img src="{% static 'profile_pics/no_profile.jpg' %}" alt="Default Profile Picture">
+                    <span class="counter-show"></span>
+                <!-- {% endif %}-->
+            </a>
+            <!-- {% endif %}-->
+            
+            
+        
+        <div class="harmburger">
+        <i class="bi bi-list" id="harmburger"></i>
+        </div>
+      </div>
+    </header>
+<!-- header ends here-->
+   <main>
+    <section class="search">
+        <div class="search-form" id="search-form">
+            <div class="filter">
+                <div class="search-close">
+                    <button id="search-close">
+                        <span>close search &nbsp;</span><i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <form method="post" action="{% url 'search' %}" class="form" autocomplete="off">
+                    <div class="input-holder">
+                      {% csrf_token %}
+                      <i class="bi bi-search"></i>
+                      <input type="search" name="area" maxlength="50" id="search-input" placeholder="search" required>
+                      <button type="submit">Search</button>
+                    </div>
+                    <div class="auto-suggestion" id="auto-suggestion">
+                        
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </div>
+        
+    </section>
+    <section class="forecast section-padding">
+      <div class="forecast-left">
+        <div class="today">
+            <div class="country-time">
+                <p>lilongwe current weather (Saturday)</p>
+                <p class="time">8:00 am</p>
+            </div>
+            <div class="temperature-others">
+                <div class="temperature">
+                    <h1>
+                        <i class="bi bi-sun">
+
+                        </i>
+                    </h1>
+                    
+                    <div class="temp-details">
+                        <h2>
+                            21 &#176;C
+                        </h2>
+                        <h6>Temperature</h6>
+
+                    </div>
+
+                </div>
+                <div class="others">
+                    <div class="border-bottom">
+                        <p>Wind Speed <i class="bi bi-wind"></i></p>
+                        <p class="number">7.42Km/hr</p>
+                    </div>
+                    <div class="border-bottom">
+                        <p>Humidity <i class="bi bi-moisture"></i></p>
+                        <p class="number">78%</p>
+                    </div>
+                    <div class="border-bottom">
+                        <p>Rainfall Chances <i class="bi bi-cloud-lightning-rain"></i></p>
+                        <p class="number">0</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="bottom-today">
+                <p>Todays weather overview</p>
+            </div>
+        </div>
+        <div class="today-3hrs">
+            <div class="title border-bottom">
+                <p>1 week forecast for lilongwe</p>
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+            <div class="forecast-week border-bottom">
+                <p class="day">
+                    sunday
+                </p>
+                <p class="time">
+                    18:00
+                </p>
+                <p class="overall">
+                    <i class="bi bi-sun">
+
+                    </i>
+                    sunny
+
+                </p>
+                <p class="temperature">
+                    
+                    21 &#176;C
+                </p>
+                <p class="wind">
+                    <i class="bi bi-wind">
+
+                    </i>
+                    7.42Km/hr
+                </p>
+                <p class="Humidity">
+                    <i class="bi bi-moisture">
+
+                    </i>
+                    78%
+                </p>
+                <p class="rainfall">
+                    <i class="bi bi-cloud-lightning-rain">
+
+                    </i>
+                    0
+                </p>
+
+            </div>
+        </div>
+
+      </div>
+      <div class="blog-advertisement">
+        <div class="recent-blogs">
+          <div class="recent border-bottom">
+          <p class="title">Recent articles </p>
+          </div>
+          <div class="blog border-bottom">
+          <div class="content">
+           <p class="blog-title">
+            what it takes ?
+           </p>
+           <p class="attention-grabber">
+           well in the time being it was know as the 
+           awakening of the... 
+           </p>
+           <p class="date-blog">
+           29 jan 2024
+           </p>
+          </div>
+          <div class="image">
+          <img src="../../assets/img/blogs/blogSlide1.jpg" alt="">
+          </div>
+          </div>
+          <div class="blog border-bottom">
+          <div class="content">
+           <p class="blog-title">
+            what it takes ?
+           </p>
+           <p class="attention-grabber">
+           well in the time being it was know as the 
+           awakening of the... 
+           </p>
+           <p class="date-blog">
+           29 jan 2024
+           </p>
+          </div>
+          <div class="image">
+          <img src="../../assets/img/blogs/blogSlide1.jpg" alt="">
+          </div>
+          </div>
+          <div class="blog border-bottom">
+          <div class="content">
+           <p class="blog-title">
+            what it takes ?
+           </p>
+           <p class="attention-grabber">
+           well in the time being it was know as the 
+           awakening of the... 
+           </p>
+           <p class="date-blog">
+           29 jan 2024
+           </p>
+          </div>
+          <div class="image">
+          <img src="../../assets/img/blogs/blogSlide1.jpg" alt="">
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   </main>
+   <footer class="section-padding padding-bottom">
+    <div class="top">
+      <div class="left-container">
+        <div class="footer-heading-location">
+          <div class="heading">
+            <p class="bold larger">Contact Us</p>
+          </div>
+          <div class="list-items">
+            <p class="not-link">LUANAR, Bunda-Campus</p>
+            <p class="not-link">Lilongwe</p>
+            <p class="not-link">Malawi</p>
+            <div class="contact-info">
+              <p class="not-link"><i class="bi bi-telephone  white"></i>&nbsp;<span class="white">Phone : </span>+265998671706</p>
+              <p class="not-link"><i class="bi bi-telephone  white"></i>&nbsp;<span class="white">Phone : </span>+265888919839</p>
+              <p class="not-link"><i class="bi bi-envelope  white"></i>&nbsp;<span class="white">Email : </span>agrera@nativeback.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-heading">
+          <div class="heading">
+            <p class="bold larger">Useful Links</p>
+          </div>
+          <div class="list-items">
+            <ul class="gray">
+              <li><a href="{% url 'homepage' %}">Home</a></li>
+              <li><a href="{% url 'marketplace_page' %}">Marketplace</a></li>
+              <li><a href="{% url 'blogs_page' %}">Articles</a></li>
+              <li><a href="{% url 'vacancy_page' %}">Vacancies</a></li>
+              <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+              <li><a href="{% url 'help' %}">Contact Us</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="footer-heading">
+          <div class="heading">
+            <p class="bold larger">Advanced Tools</p>
+          </div>
+          <div class="list-items">
+            <ul class="gray">
+              <li>
+                  <a href="{% url 'feed_formulation' %}" class="nav-link-main">
+                  Feed Formulation
+                </a>
+              </li>
+              <li>
+                  <a href="{% url 'weather_home' %}" class="nav-link-main">
+                    Weather
+                  </a>
+                </li>
+              <li>
+                  <a href="{% url 'mbeya_fertilizer' %}" class="nav-link-main">
+                    Mbeya Fertiliser
+                  </a>
+                </li>
+              <li>
+                  <a href="{% url 'recordbooks' %}" class="nav-link-main inactive">
+                  Business Records 
+                  </a>
+                </li>
+              <li>
+                  <a href="{% url 'pedal' %}" class="nav-link-main inactive">
+                  Pest and Disease Analysis
+                  </a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-heading last">
+        <div class="logo">
+          <a href="{% url 'homepage' %}">
+            <img src="../../assets/img/agrera1.png" alt="footer logo">
+            <h5 class="bold ">
+              Agrera
+            </h5>
+          </a>
+          
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61553137507989&mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
+          
+        </div>
+      </div>
+    </div>
+    <small 
+    style="
+    text-align:center;
+    display:block;
+    ">&copy;2024 Agrera Platform. All Rights Reserved</small>
+    </footer>
+    <a href="#" class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
+    <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        function closeMessage(){
+            const message=document.querySelector(".message");
+            message.classList.add("hide");
+        }
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        });
+    </script>
+    <script src="../../assets/js/weather.js"></script>
+</body>
+</html>

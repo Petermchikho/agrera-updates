@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+    <link rel="shortcut icon" href="../../assets/img/logo/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="../../assets/img/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="../../assets/img/logo/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="../../assets/img/logo/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/img/logo/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/img/logo/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logo/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logo/favicon-16.png">
+    <link rel="apple-touch-icon" href="../../assets/img/logo/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/logo/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/logo/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/logo/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/logo/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/logo/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/logo/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/logo/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/logo/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../../assets/img/logo/favicon-144.png">
+    <meta name="msapplication-config" content="../../assets/img/logo/browserconfig.xml">
+  
+    <!-------------------Vendor CSS Files----------->
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/vendor/swiper/swiper-bundle.min.css">
+    <!------------------ Own style files------------>
+    <link rel="stylesheet" href="../../assets/css/Records.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-------------header section--------------->
+  <header id="header" class="header-general">
+    <div class="logo">
+      <a href="{% url 'homepage' %}">
+       <!-- <img src="{% static "assets/img/logo/agrera1.png" %}" alt="">-->
+        <img src= "../../assets/img/agrera1.png" alt="">
+        <h4>agrera</h4>
+      </a>
+      
+    </div>
+    <div class="nav-container" id="nav-container">
+      
+      <nav class="navigation-general" id="navigation-general">
+        <ul>
+          <li class="main-link active">
+            <a href="{% url 'homepage' %}"   class="nav-link-main active">Home</a>
+          </li>
+          
+          <li class="main-link dropdown" id="dropdown"><a href="#" class="nav-link-main"><span>Feed formulation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul id="DropDown" class="dropDown-inner">
+              <li><a href="{% url 'feed_formulation' %}" class="nav-link-main">Pig Feed</a></li>
+              <li><a href="{% url 'feed_formulation' %}" class="nav-link-main">Chicken Feed</a></li>
+              
+            </ul>
+          </li>
+          <li class="main-link">
+            
+          </li>
+          <li class="main-link "><a href="{% url 'marketplace_page' %}" class="nav-link-main">Marketplace</a></li>
+          <li class="main-link "></li>
+          <li class="main-link dropdown" id="dropdown">
+            <a href="#" class="nav-link-main">
+              <span>Drop Down</span> 
+              <i class="bi bi-chevron-down">
+
+              </i>
+            </a>
+            <ul id="DropDown" class="dropDown-inner">
+              <li><a href="#" class="nav-link-main">Drop Down 1</a></li>
+              <li><a href="#" class="nav-link-main">Drop Down 2</a></li>
+              <li><a href="{% url 'weather_home' %}" class="nav-link-main">Weather forecast</a></li>
+              <li><a href="{% url 'vacancy_page' %}" class="nav-link-main">Vacancies</a></li>
+            </ul>
+          </li>
+          <li class="main-link"><a href="{% url 'blogs_page' %}" class="nav-link-main">Blogs</a></li>
+          <li class="main-link"><a href="{% url 'mbeya_fertilizer' %}" class="nav-link-main">Mbeya Fertilizer</a></li>
+          
+        </ul>
+        <!--{% if not user.is_authenticated %}-->
+        <a href="{% url 'login_page' %}" class="login-signup" ><button >Login/Signup</button></a>
+        <!--{% endif %}-->
+      </nav>
+      <div class="close-harmburger">
+        <i class="bi bi-x-circle" id="close-nav"></i>
+      </div>
+      
+    </div>
+    <div class="container-dummy">
+      <!--add an if statement here
+      <a href="{% url 'profile_page' %}" class="profile-after-login" id="profile-after-login" >
+        {% if user.is_authenticated %}
+    
+            {% if user.profile_picture %}
+                <img src="{{ user.profile_picture.url }}" alt="Profile Picture">
+                <span class="counter-show"></span>
+            {% else %}
+                <img src="{% static 'profile_pics/no_profile.jpg' %}" alt="Default Profile Picture">
+                <span class="counter-show"></span>
+            {% endif %}
+        {% endif %}
+          
+          
+      </a>
+      -->
+      <div class="harmburger">
+        <i class="bi bi-list" id="harmburger"></i>
+      </div>
+   </div>
+  </header>
+  <!-- header ends here-->
+  <main>
+    <section class="record-books section-padding">
+     <div class="intro-record-books">
+        <h6 class="bold">
+           Agrera record books
+        </h6>
+        <p class="small"><span>home /</span> your record books</p>
+        <div class="intro-name-add">
+            <p>
+                welcome Mr Peter Mchikho to agrera record books which
+                aim at helping farmers in keeping track of their finances.
+            </p>
+            <div id="record-list"></div>
+            <div class="button-add">
+                <a href="">
+                    <button>
+                        Add new record book
+                    </button>
+                </a>
+                
+            </div>
+
+        </div>
+        
+     </div>
+     
+     <div class="record-book-container">
+        <div class="record-book">
+            <div class="record-name">
+                <p >
+                    Maize record
+                </p>
+                <i class="bi bi-three-dots">
+                </i>
+                <div class="drop-down-record">
+                    <p class="heading-drop-down">
+                        Jump to
+                    </p>
+                    <a href="#record-list" class="section-jump">
+                        Records list
+                    </a>
+                    <a href="#record-book-example" class="section-jump">
+                        Record example
+                    </a>
+
+                </div>
+            </div>
+            <div class="button-container-icon">
+                <div class="icon">
+                    <i class="bi bi-clipboard-data"></i>
+                </div>
+                <div class="buttons">
+                    <a href="">
+                        <button>
+                            View record
+                        </button>
+                    </a>
+                    <a href="">
+                        <button>
+                            Rename record 
+                        </button>
+                    </a> 
+                </div>
+            </div>
+            
+        </div>
+        <div class="record-book">
+            <div class="record-name">
+                <p >
+                    Munda wakumtunda record
+                   
+                </p>
+                <i class="bi bi-three-dots">
+                </i>
+                <div class="drop-down-record">
+                    <p class="heading-drop-down">
+                        Jump to
+                    </p>
+                    <a href="#record-list" class="section-jump">
+                        Records list
+                    </a>
+                    <a href="#record-book-example" class="section-jump">
+                        Record example
+                    </a>
+
+                </div>
+            </div>
+            <div class="button-container-icon">
+                <div class="icon">
+                    <i class="bi bi-clipboard-data"></i>
+                </div>
+                <div class="buttons">
+                    <a href="">
+                        <button>
+                            View Record
+                        </button>
+                    </a>
+                    <a href="">
+                        <button>
+                            Rename Record
+                        </button>
+                    </a> 
+                </div>
+            </div>
+            
+        </div>
+        <div class="record-book">
+            <div class="record-name">
+                <p >
+                    Munda wakumtunda record
+                   
+                </p>
+                <i class="bi bi-three-dots">
+                </i>
+                <div class="drop-down-record">
+                    <p class="heading-drop-down">
+                        Jump to
+                    </p>
+                    <a href="#record-list" class="section-jump">
+                        Records list
+                    </a>
+                    <a href="#record-book-example" class="section-jump">
+                        Record example
+                    </a>
+
+                </div>
+            </div>
+            <div class="button-container-icon">
+                <div class="icon">
+                    <i class="bi bi-clipboard-data"></i>
+                </div>
+                <div class="buttons">
+                    <a href="">
+                        <button>
+                            View Record
+                        </button>
+                    </a>
+                    <a href="">
+                        <button>
+                            Rename Record
+                        </button>
+                    </a> 
+                </div>
+            </div>
+            
+        </div>
+        
+     </div>
+    </section>
+    <section class="example section-padding" id="record-book-example"> 
+        <h6>Record book example</h6>
+    </section>
+    <section class="record-book-example section-padding">
+        <div class="left-record">
+            <div class="income-expenditure">
+                <div class="income ">
+                    <div class="record--name">
+                        <p class="bold">
+                            Income 
+                            <span class="green">
+                                | Total
+                            </span>
+                        </p>
+                        <i class="bi bi-three-dots">
+                        </i>
+                        <div class="drop-down-record">
+                            <p class="heading-drop-down">
+                                Jump to
+                            </p>
+                            <a href="#record-list" class="section-jump">
+                                Records list
+                            </a>
+                            <a href="#record-book-example" class="section-jump">
+                                Record example
+                            </a>
+                            <a href="#Performance" class="section-jump">
+                                Performance chart
+                            </a>
+                            
+        
+                        </div>
+                    </div>
+                    <div class="button--container-icon">
+                        <div class="icon">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="amount">
+                            <h6>K200,000</h6>
+                            <p class="small">
+                                The Net Income of your business is K200,000
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="expenditure">
+                    <div class="record--name">
+                        <p class="bold">
+                            expenditure 
+                            <span class="green">
+                                | Total
+                            </span>
+                        </p>
+                        <i class="bi bi-three-dots">
+                        </i>
+                        <div class="drop-down-record">
+                            <p class="heading-drop-down">
+                                Jump to
+                            </p>
+                            <a href="#record-list" class="section-jump">
+                                Records list
+                            </a>
+                            <a href="#record-book-example" class="section-jump">
+                                Record example
+                            </a>
+                            <a href="#Performance" class="section-jump">
+                                Performance chart
+                            </a>
+        
+                        </div>
+                    </div>
+                    <div class="button--container-icon">
+                        <div class="icon">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="amount">
+                            <h6>K200,000</h6>
+                            <p class="small">
+                                The Net Expenditure of your business is K200,000
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="profit">
+                <div class="record--name">
+                    <p class="bold">
+                        Profit
+                    </p>
+                    <i class="bi bi-three-dots">
+                    </i>
+                    <div class="drop-down-record">
+                        <p class="heading-drop-down">
+                            Jump to
+                        </p>
+                        <a href="#record-list" class="section-jump">
+                            Records list
+                        </a>
+                        <a href="#record-book-example" class="section-jump">
+                            Record example
+                        </a>
+                        <a href="#Performance" class="section-jump">
+                            Performance chart
+                        </a>
+    
+                    </div>
+                </div>
+                <div class="button--container-icon">
+                    <div class="icon">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="amount">
+                        <h6>K99,000</h6>
+                        <p class="small">
+                            The Net Profit of your business is 99000
+                        </p>
+                        <p class="small">
+                            Your business is operating at a profit "K99000", maintain and always be on a lookout for strategies to keep your business health.
+                        </p>
+                    </div>
+                </div>
+                <span id="income"></span>
+            </div>
+            <div class="chart">
+                <h6 >Income Chart</h6>
+                <div id="chart-container">
+                    <canvas id="income-chart"></canvas>
+                </div>
+                <p>graphic overlook of income </p>
+                <span id="expenditure"></span>
+            </div>
+            <div class="chart">
+                <h6 >Expenditure Chart</h6>
+                <div id="chart-container">
+                    <canvas id="expense-chart"></canvas>
+                </div>
+                <p>graphic overlook of expenses </p>
+            </div>
+        </div>
+        <div id="Performance" class="right-record">
+            <div class="chart">
+                <h6>Performance Chart</h6>
+                <div id="chart-container">
+                    <canvas id="expense-income-chart"></canvas>
+                </div>
+                <p>graphic overlook of expenses, income and profits of the business</p>
+            </div>
+            <div class="net-income">
+                <div class="record--name">
+                    <p class="bold">
+                        Net Income
+                        <span class="green">
+                            | Activities
+                        </span>
+                    </p>
+                    <i class="bi bi-three-dots">
+                    </i>
+
+                    <div class="drop-down-record">
+                        <p class="heading-drop-down">
+                            Jump to
+                        </p>
+                        <a href="#record-list" class="section-jump">
+                            Records list
+                        </a>
+                        <a href="#record-book-example" class="section-jump">
+                            Record example
+                        </a>
+                        <a href="#income" class="section-jump">
+                            income expenditure chart
+                        </a>
+                        <a href="#All-income" class="section-jump">
+                           All income Records
+                        </a>
+    
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="date">
+                        <p class="small bold">
+                            Date
+                        </p>
+
+                    </div>
+                    <div class="separator"
+                    
+                    >
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small bold">
+                            Activity
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small bold">
+                            Total
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Dec. 9, 2023
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                            Sold 5 bags of maize
+                            
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K250,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Dec. 12, 2023
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                            Sold 6 bags of fertiliser mbeya
+                            
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K150,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 1, 2023
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                            Sold 1 bag of maize
+                            
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K50,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 5, 2023
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                            Sold 10 bags of manure
+                            
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K50,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           sold 8 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K400,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Feb. 1, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           sold 1 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K50,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Feb. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           sold 8 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K400,000
+                        </p>
+
+                    </div>
+  
+                </div>
+            </div>
+            <div class="net-income expenses">
+                <div class="record--name">
+                    <p class="bold">
+                        Net Expenditure
+                        <span class="green">
+                            | Activities
+                        </span>
+                    </p>
+                    <i class="bi bi-three-dots">
+                    </i>
+                    <div class="drop-down-record">
+                        <p class="heading-drop-down">
+                            Jump to
+                        </p>
+                        <a href="#record-list" class="section-jump">
+                            Records list
+                        </a>
+                        <a href="#record-book-example" class="section-jump">
+                            Record example
+                        </a>
+                        <a href="#expenditure" class="section-jump">
+                            Expenditure chart
+                        </a>
+                        <a href="#All-expenditure" class="section-jump">
+                            All expenses record
+                        </a>
+    
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="date">
+                        <p class="small bold">
+                            Date
+                        </p>
+
+                    </div>
+                    <div class="separator"
+                    
+                    >
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small bold">
+                            Activity
+                        </p>
+
+                    </div>
+                    <div class="separator red"
+                    >
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small bold">
+                            Total
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Nov. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                            Sold maize
+                            Sold maize
+                            Sold maize
+                            Sold maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K700,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+                <div class="activity">
+                    <div class="date">
+                        <p class="small ">
+                            Jan. 9, 2024
+                        </p>
+
+                    </div>
+                    <div class="separator">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="detail">
+                        <p class="small ">
+                           Bought 60 bags of maize
+                        </p>
+
+                    </div>
+                    <div class="separator red">
+                        <i class="bi bi-record-fill">
+
+                        </i>
+                        <span>
+                            
+                        </span>
+
+                    </div>
+                    <div class="total">
+                        <p class="small ">
+                            K1,000,000
+                        </p>
+
+                    </div>
+  
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
+    <section class="overall-performance section-padding">
+        <div class="table-info">
+            <h5>Overall Performance</h5>
+            <p>The Gross Profit of your business is <span class="bold">139000</span>  </p>
+            <table>
+                <thead>
+                    <tr>
+                      <th >Date</th>
+                      <th class="activity-min">Activity </th>
+                      <th >Category</th>
+                      <th >Total</th>
+                      <th >Update</th>
+                      <th >delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 15 2024</td>
+                      <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                      </td>
+                      <td>Expense</td>
+                      <td>K700,000</td>
+                      <td>
+                        <a href="">
+                            <button class="update">
+                                update
+                            </button>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="">
+                            <button class="delete">
+                                Delete
+                            </button>
+                        </a>
+                     </td>
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                          fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        <td>
+                          <a href="">
+                              <button class="update">
+                                  update
+                              </button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="">
+                              <button class="delete">
+                                  Delete
+                              </button>
+                          </a>
+                       </td>
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    <td>
+                        <a href="">
+                            <button class="update">
+                                update
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <button class="delete">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                        </td>
+                        <td>Expense</td>
+                        <td>K700,000</td>
+                        <td>
+                          <a href="">
+                              <button class="update">
+                                  update
+                              </button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="">
+                              <button class="delete">
+                                  Delete
+                              </button>
+                          </a>
+                       </td>
+                      </tr>
+                      <tr>
+                          <td>Jan 15 2024</td>
+                          <td class="activity-min">Went to the market and sold
+                            fertilizer
+                          </td>
+                          <td>Income</td>
+                          <td>K500,000</td>
+                          <td>
+                            <a href="">
+                                <button class="update">
+                                    update
+                                </button>
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                                <button class="delete">
+                                    Delete
+                                </button>
+                            </a>
+                         </td>
+                      </tr>
+                      <tr>
+                      <td>Jan 15 2024</td>
+                      <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                      </td>
+                      <td>Expense</td>
+                      <td>K700,000</td>
+                      <td>
+                          <a href="">
+                              <button class="update">
+                                  update
+                              </button>
+                          </a>
+                      </td>
+                      <td>
+                          <a href="">
+                              <button class="delete">
+                                  Delete
+                              </button>
+                          </a>
+                      </td>
+                      </tr>
+                      <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                        </td>
+                        <td>Expense</td>
+                        <td>K700,000</td>
+                        <td>
+                          <a href="">
+                              <button class="update">
+                                  update
+                              </button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="">
+                              <button class="delete">
+                                  Delete
+                              </button>
+                          </a>
+                       </td>
+                      </tr>
+                      <tr>
+                          <td>Jan 15 2024</td>
+                          <td class="activity-min">Went to the market and sold
+                            fertilizer
+                          </td>
+                          <td>Income</td>
+                          <td>K500,000</td>
+                          <td>
+                            <a href="">
+                                <button class="update">
+                                    update
+                                </button>
+                            </a>
+                          </td>
+                          <td>
+                            <a href="">
+                                <button class="delete">
+                                    Delete
+                                </button>
+                            </a>
+                         </td>
+                      </tr>
+                      <tr>
+                      <td>Jan 15 2024</td>
+                      <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                      </td>
+                      <td>Expense</td>
+                      <td>K700,000</td>
+                      <td>
+                          <a href="">
+                              <button class="update">
+                                  update
+                              </button>
+                          </a>
+                      </td>
+                      <td>
+                          <a href="">
+                              <button class="delete">
+                                  Delete
+                              </button>
+                          </a>
+                      </td>
+                      </tr>
+                      
+                    
+                  </tbody>
+            </table>
+        </div>
+        <span id="All-income"></span>
+        
+    </section>
+    <section class="overall-performance section-padding" id="income-full">
+        <div class="table-info">
+            <h5>Net income</h5>
+            <p>all income records </p>
+            <table>
+                <thead>
+                    <tr>
+                      <th >Date</th>
+                      <th class="activity-min">Activity </th>
+                      <th >Category</th>
+                      <th >Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 15 2024</td>
+                      <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                      </td>
+                      <td>Expense</td>
+                      <td>K700,000</td>
+                      
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                          fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                        </td>
+                        <td>Expense</td>
+                        <td>K700,000</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                        fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                        fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                  </tbody>
+            </table>
+        </div> 
+        <span id="All-expenditure"></span>
+    </section>
+    <section class="overall-performance section-padding" id="expenditure-full">
+        <div class="table-info">
+            <h5>Net Expenditure</h5>
+            <p>all Expenditure records </p>
+            <table>
+                <thead>
+                    <tr>
+                      <th >Date</th>
+                      <th class="activity-min">Activity </th>
+                      <th >Category</th>
+                      <th >Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 15 2024</td>
+                      <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                      </td>
+                      <td>Expense</td>
+                      <td>K700,000</td>
+                      
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                          fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and bought 
+                          fertilizer
+                        </td>
+                        <td>Expense</td>
+                        <td>K700,000</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                        fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Jan 15 2024</td>
+                        <td class="activity-min">Went to the market and sold
+                        fertilizer
+                        </td>
+                        <td>Income</td>
+                        <td>K500,000</td>
+                        
+                    </tr>
+                    <tr>
+                    <td>Jan 15 2024</td>
+                    <td class="activity-min">Went to the market and bought 
+                        fertilizer
+                    </td>
+                    <td>Expense</td>
+                    <td>K700,000</td>
+                    
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+        
+        
+    </section>
+    <section class="market-nav show">
+        <div class="nav-item-container ">
+            <a href="{% url 'marketplace_page' %}" class="nav-item-market active">
+                <div class="icon-text">
+                    <i class="bi bi-house-door"></i>
+                    <span>Records</span>
+                </div>
+            </a>
+            <a href="{% url 'dashboard_page' %}" class="nav-item-market">
+                <div class="icon-text">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Metrics</spa>
+                </div>
+            </a>
+            <a href="{% url 'add_product_page' %}" class="nav-item-market add">
+                <div class="icon-text">
+                    <div class="add">
+                        <img src="../../assets/img/market/menu-shape-dark.svg" alt="add">
+                        <i class="bi bi-plus"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'search_and_category_page' %}" class="nav-item-market">
+                <div class="icon-text">
+                    <i class="bi bi-clipboard-data"></i>
+                    <span>New </span>
+                </div>
+            </a>
+            <a href="{% url 'verified_products_page' %}" class="nav-item-market">
+                <div class="icon-text">
+                    <i class="bi bi-person"></i>
+                    <span>buyers</span>
+                </div>
+            </a>
+        </div>
+        
+    </section>
+
+
+  
+     
+  </main>
+  
+  <a href="#" class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
+<!------------------------VENDOR JS------------->
+<script src="../../assets/vendor/chart.js/chart.min.js"></script>
+
+<!------------------------OWN JS --------------->
+<!-- Initialize Charts -->
+<script>
+const chartIncome =document.getElementById("income-chart")
+const chartIncomeChart= new Chart(chartIncome, {
+            type: 'line',
+            data: {
+              labels: ['Feb 17', '18', '19','20','21','22','23'],
+              datasets: [{
+                label:"income chart",
+                backgroundColor:'#2eca6a',
+                borderColor:'#2eca6a',
+                data: [20000,50000,80000,20000,90000,40000,60000]
+              }
+            ]
+            },
+            options: {
+              tension:0.4,
+              responsive: true,
+              maintainAspectRatio: false,
+              scales:{
+                y:{
+                    beginAtZero:true
+                }
+              }
+             }
+          });
+          const chartExpense =document.getElementById("expense-chart")
+            const chartExpenseChart= new Chart(chartExpense, {
+                        type: 'line',
+                        data: {
+                        labels: ['Feb 17', '18', '19','20','21','22','23'],
+                        datasets: [{
+                            label:"income chart",
+                            backgroundColor:'#2eca6a',
+                            borderColor:'#2eca6a',
+                            data: [20000,50000,80000,20000,90000,40000,60000]
+                        }
+                        ]
+                        },
+                        options: {
+                        tension:0.4,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        
+                        scales:{
+                            y:{
+                                beginAtZero:true
+                            }
+                        },
+                        }
+                    });
+                    
+                    let labelPerformance=[];
+                    let profit=-1000;
+                    let profits="";
+                    if(profit>=0){
+                       profits="profit";
+                       labelPerformance=['income', 'expenditure', 'profit'];
+                    }else if(profit<0){
+                        profits="Loss";
+                        labelPerformance=['income', 'expenditure', 'loss'];
+                    }
+                    const chartExpenseIncome =document.getElementById("expense-income-chart")
+            const chartExpenseIncomeChart= new Chart(chartExpenseIncome, {
+                        type: 'doughnut',
+                        data: {
+                        labels:labelPerformance,
+                        datasets: [{
+                            label:"income chart",
+                            fill: false,
+                            backgroundColor:['#5470c6','#91cc75','#fac858'],
+                            borderColor:'transparent',
+                            data: [20000,50000,-80000]
+                        }
+                        ]
+                        },
+                        options: {
+                        tension:0.4,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales:{
+                            x: {
+                                display: false,
+                                grid: {
+                                display: false
+                                }
+                            },
+                            y:{
+                                beginAtZero:true,
+                                display: false,
+                                grid: {
+                                    display: false
+                                    }
+                            }
+                            
+
+                        },
+                        hoverOffset: 10
+
+                        }
+                    });
+</script>
+
+<!------------------------OWN JS --------------->
+<script src="../../assets/js/records.js"></script>  
+</body>
+</html>
