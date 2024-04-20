@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGRERA | ANALYSIS RESULTS </title>  
+    <title>AGRERA |  </title>  
     <link rel="shortcut icon" href="{% static "assets/img/logo/favicon.ico" %}">
     <link rel="icon" sizes="16x16 32x32 64x64" href="{% static "assets/img/logo/favicon.ico" %}">
     <link rel="icon" type="image/png" sizes="196x196" href="{% static "assets/img/logo/favicon-192.png" %}">
@@ -118,188 +118,34 @@
      </div>
     </header>
   <!-- header ends here-->
-  <main id="disease">
-
-    <section class="disease-width section-padding">
-        <h5 class="bold">Results</h5>
-        <div class="summary">
-          <div class="left-img">
-            <img src="../../assets/img/DISEASE/insect-disease-spray-guide.webp" alt="">
-          </div>
-          <div class="right-results">
-            <h6>Summary</h6>
-            <p><span class="bold">Disease :</span> leaf bright</p>
-            <p><span class="bold">confidence :</span> 98%</p>
-            <p><span class="bold">Medication :</span> Mancozeb 2 Kg Or Captan 1 Kg/Ha</p>
-          </div>
-        </div>
-        <div class="single-blog-container ">
-            <div class="left" id="left-content">
-              
-              <div class="content">
-                <h6>Title first</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Debitis aliquid voluptas sequi cum 
-                    maxime et voluptatem expedita atque, tenetur accusantium.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Sapiente fugit repudiandae dolorum. Praesentium, nostrum
-                     consectetur numquam repellendus recusandae eius quam modi 
-                     tempore? Corrupti suscipit incidunt optio commodi quasi necessitatibus aliquam.
-                  </p>
-                  <img src="../../assets/img/DISEASE/insect-disease-spray-guide.webp" alt="">
-
-              </div>
-              
-              <div class="content references">
-                <h6>Title first</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Debitis aliquid voluptas sequi cum 
-                    maxime et voluptatem expedita atque, tenetur accusantium.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Sapiente fugit repudiandae dolorum. Praesentium, nostrum
-                     consectetur numquam repellendus recusandae eius quam modi 
-                     tempore? Corrupti suscipit incidunt optio commodi quasi necessitatibus aliquam.
-                  </p>
-                  <img src="../../assets/img/DISEASE/insect-disease-spray-guide.webp" alt="">
-                  
-                
-              </div>
-              
-              
-                
-                
+  <main id="alert">
+    <section class="alert-container">
+        <div class="dialog-alert">
+            <p>Lorem ipsum dolor sit amet consectetur
+                 adipisicing elit. Fugit consequuntur, 
+                rem omnis accusantium ex provident 
+                voluptatibus? Nobis, vel at! Pariatur.
+            </p>
+            <div class="button-container">
+                <a href="">
+                    <button class="home">
+                        Go back to homepage
+    
+                    </button>
+                </a>
             </div>
             
-        </div>
-        <div class="team">
-          <h5>Credits</h5>
-          <div class="member-profile">
-            <div class="member-name-img" id="member-details" >
-              <div class="contributor">
-                <img src="../../assets/img/DISEASE/insect-disease-spray-guide.webp" alt="">
-                <div>
-                  <p>model contributor</p>
-                  <p>Peter Mchikho</p>
-                </div>
-              </div>
-
-              <div class="full-image-author">
-                <div class="eye-x-author" id="eye-x-id" >
-                  <i class="bi bi-eye-slash-fill" ></i>
-                </div>
-                <div class="dummy-view-author">
-                  
-                  <div class="team-container sub-info">
-                    <div class="container-info">
-                      <div class="image">
-                        <img src="{{ blog.author.user.profile_picture.url }}" alt="Profile Picture">
-                      </div>
-                      <div class="about-member">
-                        <div class="name">
-                          <h5 >
-                            {{ blog.author.user.first_name|capfirst }} {{ blog.author.user.last_name|capfirst }}
-                          </h5>
-                        </div>
-                        <div class="position">
-                          <h5>{{ blog.author.user.qualifications }}</h5>
-                        </div>
-                        <div class="socials">
-                          <a href="{{ blog.author.facebook_url }}" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bi bi-facebook facebook"></i></a>
-                          <a href="{{ blog.author.twitter_url }}" target="_blank" rel="noopener noreferrer" class="twitter"><i class="bi bi-twitter twitter"></i></a>
-                          <a href="{{ blog.author.instagram_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram instagram"></i></a>
-                          <a href="{{ blog.author.linkedin_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin linkedin"></i></a> 
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-
-            </div>
-            <div class="member-name-img" id="member-details" >
-              <div class="contributor">
-                <img src="../../assets/img/DISEASE/insect-disease-spray-guide.webp" alt="">
-                <div>
-                  <p>model contributor</p>
-                  <p>Peter Mchikho</p>
-                </div>
-              </div>
-
-              <div class="full-image-author">
-                <div class="eye-x-author" id="eye-x-id" >
-                  <i class="bi bi-eye-slash-fill" ></i>
-                </div>
-                <div class="dummy-view-author">
-                  
-                  <div class="team-container sub-info">
-                    <div class="container-info">
-                      <div class="image">
-                        <img src="{{ blog.author.user.profile_picture.url }}" alt="Profile Picture">
-                      </div>
-                      <div class="about-member">
-                        <div class="name">
-                          <h5 >
-                            bbbbbb{{ blog.author.user.first_name|capfirst }} {{ blog.author.user.last_name|capfirst }}
-                          </h5>
-                        </div>
-                        <div class="position">
-                          <h5>{{ blog.author.user.qualifications }}</h5>
-                        </div>
-                        <div class="socials">
-                          <a href="{{ blog.author.facebook_url }}" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bi bi-facebook facebook"></i></a>
-                          <a href="{{ blog.author.twitter_url }}" target="_blank" rel="noopener noreferrer" class="twitter"><i class="bi bi-twitter twitter"></i></a>
-                          <a href="{{ blog.author.instagram_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram instagram"></i></a>
-                          <a href="{{ blog.author.linkedin_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin linkedin"></i></a> 
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-
-            </div>
             
-          </div>
-          
-      
-    
         </div>
-
     </section>
-    <section class="dialog">
-      <div class="dialog-content">
-        <div class="close-btn">
-          <i class="bi bi-"></i>
-        </div>
-        <div class="message">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing 
-          elit. Qui dolores autem vel. Quos incidunt 
-          inventore quibusdam sed cupiditate eos exercitationem.
-        </p>
 
-        </div>
-        <div class="btn">
-          <button id="close-dialog">
-            close
-          </button>
-        </div>
-      </div>
-      
-
-    </section>
+    
     
 
     
     
-    <section class="scroll-bar">
-      <div class="progress-bar">
-
-      </div>
-    </section>
+    
+    
 
   
      
